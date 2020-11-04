@@ -8,6 +8,8 @@ target 'libraryTest' do
 
   use_react_native!(:path => config["reactNativePath"])
 
+  pod 'RNTorusDirectSdk', :path => '../node_modules/torus-direct-react-native-sdk'
+
   target 'libraryTestTests' do
     inherit! :complete
     # Pods for testing

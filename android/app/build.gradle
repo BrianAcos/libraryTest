@@ -122,7 +122,7 @@ def enableHermes = project.ext.react.get("enableHermes", false);
 
 android {
     compileSdkVersion 26
-    buildToolsVersion '28.0.3'
+    buildToolsVersion '29.0.2'
     compileSdkVersion rootProject.ext.compileSdkVersion
 
     compileOptions {
@@ -131,7 +131,11 @@ android {
     }
 
     defaultConfig {
-        manifestPlaceholders = [auth0Domain: "@string/com_auth0_domain", auth0Scheme: "demo"]
+        manifestPlaceholders = [
+                'torusRedirectScheme': 'torusapp',
+                'torusRedirectHost': 'org.torusresearch.torusdirectexample',
+                'torusRedirectPathPrefix': '/redirect'
+        ]
         applicationId "com.librarytest"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
@@ -184,7 +188,7 @@ android {
 }
 
 dependencies {
-    compile project(':torus-direct-react-native-sdk')
+    implementation project(':torus-direct-react-native-sdk')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules

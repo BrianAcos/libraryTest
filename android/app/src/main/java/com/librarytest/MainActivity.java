@@ -1,7 +1,6 @@
 package com.librarytest;
 
 import com.facebook.react.ReactActivity;
-import org.torusresearch.rntorusdirect.RNTorusDirectSdkPackage;
 
 public class MainActivity extends ReactActivity {
 
